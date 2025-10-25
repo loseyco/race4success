@@ -122,32 +122,11 @@ body {
   gap: var(--spacing-8);
 }
 
-.nav-link {
+.nav-text {
   color: var(--white-muted);
-  text-decoration: none;
   font-weight: 500;
   font-size: var(--font-size-sm);
-  transition: var(--transition-fast);
-  position: relative;
-  
-  &:hover {
-    color: var(--white);
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--red);
-    transition: var(--transition-fast);
-  }
-  
-  &:hover::after {
-    width: 100%;
-  }
+  margin: 0 var(--spacing-4);
 }
 
 // Hero Section
@@ -232,12 +211,15 @@ body {
   max-width: 500px;
 }
 
-.hero-actions {
-  display: flex;
-  gap: var(--spacing-4);
+.hero-info {
+  margin-top: var(--spacing-8);
   
-  @media (max-width: 768px) {
-    justify-content: center;
+  .info-text {
+    font-size: var(--font-size-lg);
+    color: var(--red);
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    animation: pulse 2s ease-in-out infinite;
   }
 }
 
@@ -457,7 +439,15 @@ body {
   p {
     font-size: var(--font-size-lg);
     color: var(--white-muted);
-    margin-bottom: var(--spacing-8);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .coming-soon-text {
+    font-size: var(--font-size-xl);
+    color: var(--red);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    animation: pulse 2s ease-in-out infinite;
   }
 }
 
@@ -499,15 +489,10 @@ body {
   display: flex;
   gap: var(--spacing-6);
   
-  a {
+  .footer-text {
     color: var(--white-muted);
-    text-decoration: none;
     font-size: var(--font-size-sm);
-    transition: var(--transition-fast);
-    
-    &:hover {
-      color: var(--white);
-    }
+    margin: 0 var(--spacing-3);
   }
 }
 
