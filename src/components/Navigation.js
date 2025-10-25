@@ -37,9 +37,9 @@ const Navigation = () => {
           </span>
         </div>
         <div className="nav-links">
-          <a href="/dev" className="nav-text dev-link">
-            Dev Preview
-          </a>
+          <span className="nav-text" onClick={() => scrollToSection('features')}>
+            Features
+          </span>
         </div>
       </div>
     </nav>
