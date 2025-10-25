@@ -9,7 +9,7 @@
     "build": "npm run build:css && npm run build:js && npm run build:html",
     "build:css": "sass src/scss/main.scss public/css/style.css --style=compressed",
     "build:js": "webpack --mode=production",
-    "build:html": "cp src/views/index.html public/index.html",
+    "build:html": "copy src\\views\\index.html public\\index.html",
     "vercel-build": "npm run build",
     "watch": "npm run watch:css & npm run watch:js",
     "watch:css": "sass src/scss/main.scss public/css/style.css --watch",
