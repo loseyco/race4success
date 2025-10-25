@@ -1,0 +1,129 @@
+/* Founding Team Section Styles */
+.founding-team {
+  padding: var(--spacing-32) 0;
+  background: var(--black);
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.team-header h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-4);
+  color: var(--white);
+}
+
+.team-header p {
+  font-size: var(--font-size-lg);
+  color: var(--white-muted);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.team-member {
+  background: var(--black-lighter);
+  padding: var(--spacing-6);
+  border-radius: 12px;
+  border: 1px solid var(--black-lighter);
+  transition: var(--transition-normal);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.team-member.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-member:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.member-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--red-light);
+}
+
+.avatar-text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--spacing-2);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.member-title {
+  font-size: var(--font-size-sm);
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: var(--spacing-1);
+  text-transform: uppercase;
+}
+
+.member-company {
+  font-size: var(--font-size-sm);
+  color: var(--white-muted);
+  margin-bottom: var(--spacing-1);
+  font-weight: 500;
+}
+
+.member-expertise {
+  font-size: var(--font-size-sm);
+  color: var(--white-muted);
+  margin-bottom: var(--spacing-2);
+  font-style: italic;
+}
+
+.member-role {
+  font-size: var(--font-size-sm);
+  color: var(--white-muted);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .member-avatar {
+    align-self: center;
+  }
+}

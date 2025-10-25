@@ -37,8 +37,17 @@ const Navigation = () => {
           </span>
         </div>
         <div className="nav-links">
-          <span className="nav-text" onClick={() => scrollToSection('features')}>
-            Features
+          <span className="nav-text" onClick={() => scrollToSection('mission')}>
+            Mission
+          </span>
+          <span className="nav-text" onClick={() => scrollToSection('team')}>
+            Team
+          </span>
+          <span className="nav-text" onClick={() => scrollToSection('events')}>
+            Events
+          </span>
+          <span className="nav-text" onClick={() => scrollToSection('involved')}>
+            Get Involved
           </span>
         </div>
       </div>

@@ -1,0 +1,155 @@
+/* Get Involved Section Styles */
+.get-involved {
+  padding: var(--spacing-32) 0;
+  background: var(--black);
+}
+
+.involved-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.involved-header h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-4);
+  color: var(--white);
+}
+
+.involved-header p {
+  font-size: var(--font-size-lg);
+  color: var(--white-muted);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-16);
+}
+
+.involvement-section {
+  background: var(--black-lighter);
+  padding: var(--spacing-6);
+  border-radius: 12px;
+  border: 1px solid var(--black-lighter);
+  transition: var(--transition-normal);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.involvement-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.involvement-section:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.involvement-section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--spacing-3);
+}
+
+.involvement-section p {
+  color: var(--white-muted);
+  line-height: 1.6;
+}
+
+.involved-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-16);
+}
+
+.commitment-info,
+.contact-info {
+  background: var(--black-lighter);
+  padding: var(--spacing-8);
+  border-radius: 12px;
+  border: 1px solid var(--black-lighter);
+}
+
+.commitment-info h3,
+.contact-info h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--spacing-4);
+}
+
+.commitment-info ul {
+  color: var(--white-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-6);
+}
+
+.commitment-info li {
+  margin-bottom: var(--spacing-2);
+}
+
+.commitment-info li::marker {
+  color: var(--red);
+}
+
+.commitment-note {
+  color: var(--white-muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--white);
+  min-width: 80px;
+}
+
+.contact-link {
+  color: var(--red);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--red-light);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .involved-footer {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+  
+  .contact-label {
+    min-width: auto;
+  }
+}
