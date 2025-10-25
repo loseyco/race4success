@@ -33,7 +33,7 @@ const Navigation = () => {
       <div className="nav-container">
         <div className="nav-logo">
           <span className="logo-text" onClick={handleLogoClick}>
-            Race4Success
+            Race4Success.org
           </span>
         </div>
         <div className="nav-links">

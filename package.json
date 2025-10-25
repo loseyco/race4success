@@ -1,7 +1,7 @@
 {
   "name": "race4success",
   "version": "1.0.0",
-  "description": "Race4Success - Empowering individuals to achieve their goals through structured racing and competition",
+  "description": "Race4Success.org - Empowering individuals to achieve their goals through structured racing and competition",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

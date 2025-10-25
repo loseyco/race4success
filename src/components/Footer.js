@@ -7,15 +7,15 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <span className="logo-text">Race4Success</span>
+            <span className="logo-text">Race4Success.org</span>
             <p>STEM racing education platform</p>
           </div>
           <div className="footer-links">
-            <span className="footer-text">© 2025 Race4Success</span>
+            <span className="footer-text">© 2025 Race4Success.org</span>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 Race4Success. All rights reserved.</p>
+          <p>&copy; 2025 Race4Success.org. All rights reserved.</p>
         </div>
       </div>
     </footer>
