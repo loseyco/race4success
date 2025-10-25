@@ -442,12 +442,72 @@ document.addEventListener('DOMContentLoaded', () => {
   new Race4Success();
   new FormHandler();
   
+  // Initialize Vercel Analytics
+  initializeAnalytics();
+  
   // Make utilities globally available
   window.Race4Success = Race4Success;
   window.API = API;
   window.Storage = Storage;
   window.Notification = Notification;
 });
+
+// Vercel Analytics integration
+function initializeAnalytics() {
+  // Track page views
+  if (typeof window.va !== 'undefined') {
+    window.va('track', 'page_view', {
+      page: window.location.pathname,
+      title: document.title
+    });
+  }
+  
+  // Track button clicks
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('button, .btn, a[href]');
+    if (button) {
+      const buttonText = button.textContent?.trim() || button.getAttribute('aria-label') || 'Unknown Button';
+      const buttonClass = button.className;
+      
+      if (typeof window.va !== 'undefined') {
+        window.va('track', 'button_click', {
+          button_text: buttonText,
+          button_class: buttonClass,
+          page: window.location.pathname
+        });
+      }
+    }
+  });
+  
+  // Track form submissions
+  document.addEventListener('submit', (event) => {
+    const form = event.target;
+    const formId = form.id || form.className || 'Unknown Form';
+    
+    if (typeof window.va !== 'undefined') {
+      window.va('track', 'form_submit', {
+        form_id: formId,
+        page: window.location.pathname
+      });
+    }
+  });
+  
+  // Track navigation clicks
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (link && link.hostname === window.location.hostname) {
+      const linkText = link.textContent?.trim() || link.getAttribute('aria-label') || 'Unknown Link';
+      
+      if (typeof window.va !== 'undefined') {
+        window.va('track', 'internal_link_click', {
+          link_text: linkText,
+          link_href: link.href,
+          page: window.location.pathname
+        });
+      }
+    }
+  });
+}
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
