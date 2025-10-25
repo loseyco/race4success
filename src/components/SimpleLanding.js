@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './SimpleLanding.css';
 
 const SimpleLanding = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    // Add entrance animation
+    if (heroRef.current) {
+      heroRef.current.style.opacity = '0';
+      heroRef.current.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        heroRef.current.style.transition = 'all 1s ease-out';
+        heroRef.current.style.opacity = '1';
+        heroRef.current.style.transform = 'translateY(0)';
+      }, 100);
+    }
+  }, []);
+
   return (
-    <div className="simple-landing">
-      <div className="hero-section">
+    <section className="hero" ref={heroRef}>
+      <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>LAUNCHING NOVEMBER 2025</span>
+            <span>Coming Soon</span>
           </div>
           <h1 className="hero-title">
-            <span className="title-line">STEM IN</span>
-            <span className="title-line accent">MOTORSPORTS</span>
+            <span className="title-line">STEM</span>
+            <span className="title-line accent">Racing</span>
+            <span className="title-line">Education</span>
           </h1>
           <p className="hero-description">
-            We're creating a nonprofit to spearhead our STEM in Motorsports program 
-            for both middle schools and high schools.
+            Transforming how students learn, collaborate, and dream through 
+            racing simulators and motorsport-based education.
           </p>
-          <div className="hero-highlights">
-            <div className="highlight-item">
-              <span className="highlight-text">NATIONAL CAMPAIGN</span>
-            </div>
-            <div className="highlight-item">
-              <span className="highlight-text">ALL US SCHOOLS ELIGIBLE</span>
-            </div>
+          <div className="hero-info">
+            <p className="info-text">Coming Soon - Stay Tuned</p>
           </div>
         </div>
         <div className="hero-visual">
@@ -39,21 +51,7 @@ const SimpleLanding = () => {
           </div>
         </div>
       </div>
-      
-      <div className="info-section">
-        <div className="container">
-          <h2>Built for Purpose. Driven by Passion.</h2>
-          <p>
-            Race4Success.org is forming a select founding team of leaders, educators, 
-            innovators, and motorsport enthusiasts using motorsports as a gateway to 
-            STEM education and real-world learning.
-          </p>
-          <div className="cta-section">
-            <p className="coming-soon-text">Coming Soon - Stay Tuned</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
