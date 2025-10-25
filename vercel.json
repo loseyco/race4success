@@ -6,22 +6,26 @@
       "use": "@vercel/node"
     },
     {
-      "src": "public/**",
+      "src": "build/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1"
+    },
+    {
       "src": "/css/(.*)",
-      "dest": "/public/css/$1"
+      "dest": "/build/css/$1"
     },
     {
       "src": "/js/(.*)",
-      "dest": "/public/js/$1"
+      "dest": "/build/js/$1"
     },
     {
       "src": "/images/(.*)",
-      "dest": "/public/images/$1"
+      "dest": "/build/images/$1"
     },
     {
       "src": "/(.*)",

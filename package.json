@@ -5,18 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "npm run build:css && npm run build:js && npm run build:html",
-    "build:css": "sass src/scss/main.scss public/css/style.css --style=compressed",
-    "build:js": "webpack --mode=production",
-    "build:html": "node -e \"require('fs').copyFileSync('src/views/index.html', 'public/index.html')\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cross-env PORT=3001 nodemon server.js",
+    "client": "cross-env PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "build:server": "node server.js",
     "vercel-build": "npm run build",
-    "watch": "npm run watch:css & npm run watch:js",
-    "watch:css": "sass src/scss/main.scss public/css/style.css --watch",
-    "watch:js": "webpack --mode=development --watch",
-    "test": "jest",
-    "lint": "eslint src/js/**/*.js",
-    "format": "prettier --write src/**/*.{js,css,scss,html}"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,css,scss,html}"
   },
   "keywords": [
     "racing",
@@ -39,19 +37,22 @@
     "express-validator": "^7.0.1",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "babel-loader": "^9.1.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
-    "jest": "^29.7.0",
     "nodemon": "^3.0.2",
     "prettier": "^3.1.1",
-    "sass": "^1.69.5",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "react-scripts": "5.0.1"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -64,5 +65,17 @@
   "bugs": {
     "url": "https://github.com/loseyco/race4success/issues"
   },
-  "homepage": "https://race4success.org"
+  "homepage": "https://race4success.org",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

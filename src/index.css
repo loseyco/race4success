@@ -1,0 +1,163 @@
+/* Modern Racing Landing Page - Black, Red, White Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Variables */
+:root {
+  /* Color Palette */
+  --black: #000000;
+  --black-light: #111111;
+  --black-lighter: #1a1a1a;
+  --white: #ffffff;
+  --white-muted: #f5f5f5;
+  --red: #dc2626;
+  --red-light: #ef4444;
+  --red-dark: #b91c1c;
+  --red-accent: #ff0000;
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-red: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--white);
+  background-color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes raceLine {
+  0%, 100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes speedPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 80px;
+  }
+  
+  .features {
+    padding: var(--spacing-20) 0;
+  }
+  
+  .cta {
+    padding: var(--spacing-20) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

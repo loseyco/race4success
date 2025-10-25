@@ -43,12 +43,20 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Static files
-app.use(express.static(path.join(__dirname, 'public')));
+// Static files - serve React build in production, public in development
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+} else {
+  app.use(express.static(path.join(__dirname, 'public')));
+}
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  if (process.env.NODE_ENV === 'production') {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  } else {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  }
 });
 
 // API routes
