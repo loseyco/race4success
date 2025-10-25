@@ -5,6 +5,9 @@ const rateLimit = require('express-rate-limit');
 const path = require('path');
 require('dotenv').config();
 
+// Import Supabase client
+const { supabase, db } = require('./src/lib/supabase.cjs');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -59,12 +62,12 @@ app.get('/', (req, res) => {
   }
 });
 
-// API routes
-app.use('/api/auth', require('./server/routes/auth'));
-app.use('/api/users', require('./server/routes/users'));
-app.use('/api/races', require('./server/routes/races'));
-app.use('/api/goals', require('./server/routes/goals'));
-app.use('/api/leaderboard', require('./server/routes/leaderboard'));
+// API routes for Race4Success.org
+app.use('/api/schools', require('./server/routes/schools'));
+app.use('/api/programs', require('./server/routes/programs'));
+app.use('/api/events', require('./server/routes/events'));
+app.use('/api/contact', require('./server/routes/contact'));
+app.use('/api/newsletter', require('./server/routes/newsletter'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

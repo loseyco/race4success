@@ -28,6 +28,7 @@
   "author": "Race4Success Team",
   "license": "MIT",
   "dependencies": {
+    "@supabase/supabase-js": "^2.76.1",
     "@vercel/analytics": "^1.5.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -66,7 +67,6 @@
   "bugs": {
     "url": "https://github.com/loseyco/race4success/issues"
   },
-  "homepage": "https://race4success.org",
   "browserslist": {
     "production": [
       ">0.2%",
