@@ -53,8 +53,8 @@ const GetInvolved = () => {
     <section className="get-involved" id="involved" ref={involvedRef}>
       <div className="container">
         <div className="involved-header">
-          <h2>Ready to Join the Founding Team?</h2>
-          <p>You're not being asked to fit into a box. You're being invited because your strengths already align with what we're building.</p>
+          <h2>Our Founding Team Vision</h2>
+          <p>Each board member brings a different kind of horsepower to our mission.</p>
         </div>
         
         <div className="roles-grid">
@@ -67,19 +67,6 @@ const GetInvolved = () => {
         </div>
         
         <div className="involved-footer">
-          <div className="commitment-info">
-            <h3>Your Role as a Founding Member</h3>
-            <ul>
-              <li>Guide the mission – shaping programs and outreach strategy</li>
-              <li>Provide insight – using your expertise to help Race4Success.org grow</li>
-              <li><strong>(Optional)</strong> Small contribution ($500-$1,000) to support startup expenses</li>
-            </ul>
-            <p className="commitment-note">
-              This contribution is completely optional and does not define commitment, 
-              but accelerates our ability to move fast and seize early opportunities.
-            </p>
-          </div>
-          
           <div className="contact-info">
             <h3>Contact Information</h3>
             <div className="contact-details">
@@ -93,7 +80,7 @@ const GetInvolved = () => {
               </div>
               <div className="contact-item">
                 <span className="contact-label">Website:</span>
-                <span className="contact-link">Race4Success.org (coming soon)</span>
+                <span className="contact-link">Race4Success.org</span>
               </div>
             </div>
           </div>
